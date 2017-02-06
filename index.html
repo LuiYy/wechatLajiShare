@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>编辑分享</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<style type="text/css">
+	body{font-size: 100px;background: url(img/3.jpg) no-repeat;background-attachment:fixed;background-size: cover;}
+	.edit,.pic,.moleList,.audio,.templet{ display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;/*-webkit-align-items: center;align-items: center;*/box-sizing: border-box;}
+	.edit{width: 100%;height: 100%;padding: 0 .17rem;overflow: hidden;justify-content: flex-start;}
+	.light{position: fixed;top: -.4rem;right: .1rem;width: 1rem;}
+	nav{position: relative;width: .8rem;}
+	nav::after{content:"";display: block;position: absolute;width: 1px;height: 4.5rem;background: #f44f23;top:-.2rem;left: 48%;z-index: -1;box-shadow: -1px 0 #fa9141;}
+	nav li{width: 100%;/*margin-top: .05rem;*/}
+	nav li img{display: block;width: 100%;}
+	.deng3{margin-top: .2rem;}
+	.deng4{margin-top: .5rem;}
+	.deng5{margin-top: .2rem;}
+	.userContent{font-size: .15rem;padding-left: .1rem;display: flex;flex-direction:column;/*align-items:center;*/}
+	.mdui-input{display: block;width: 1.7rem;font-size: .16rem;border: .01rem solid white;border-radius: .28rem;background: rgba(0,0,0,.3);box-sizing: border-box;padding: .1rem .22rem;margin: .1rem 0;box-shadow: 1px 1px 1px rgba(0,0,0,.5);}
+	input::-webkit-input-placeholder { /* WebKit browsers */color:white;}
+	.mdui-input[placeholder], [placeholder], *[placeholder] { color:white !important; } 
+	.pic,.templet{position: relative;width: 1.57rem;height: 1.14rem;margin-top: .2rem;}
+	.pic .pic-img,.templet .diePic{display: block;width: 1.57rem;height: 1.14rem;border: 2px solid white;object-fit: cover;box-shadow: -1px 1px 5px rgba(0,0,0,.5);}
+	.img-top{position: absolute;}
+	.img-cen{position: absolute;transform:rotate(5deg);z-index: -1;}
+	.img-bot{position: absolute;transform:rotate(-5deg);z-index: -1;}
+	.pic-btn,.temp-btn{width: 1.31rem;height: .31rem;position: absolute;top: 50%;left: 50%;margin-top: -.155rem;margin-left: -.655rem;z-index: 1;}
+	.audio{width: 2.1rem;height: .54rem;background: url(img/index/audioBar.png) no-repeat;background-size: 100% 100%;margin-top: .4rem;box-sizing: border-box;padding-left: .6rem;margin-bottom: .1rem;}
+	.audio-btn{display: block;}
+	.audio p{line-height: .54rem;padding-left: .01rem;}
+	.up-btn{width: 2rem;height: .4rem;border-radius: .4rem;background: #eacb20;color: white;text-align: center;font-size: .2rem;margin-top: .3rem;}
+	.active{color: green;}
+	.moleBox{position: fixed;left: 0;bottom: -2.26rem;width: 100%;height: 2.26rem;overflow-y:auto;background: rgba(0,0,0,.5);z-index: 3;
+		transition:all .5s;}
+	.zz{position: fixed;display: none;top: 0;right: 0;bottom: 0;left: 0;background: rgba(0,0,0,0);z-index: 2;}
+	.moleBox.show{bottom: 0;}
+	.moleList{width: 5rem;height: 100%;-webkit-align-items: center;align-items: center;justify-content: space-around;}
+	.moleList li{width: 1rem;}
+	.moleList li img{width: 100%;object-fit: cover;}
+	</style>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+	 document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';  
+	</script>
+</head>
+<body>
+	<div class="edit">
+		<img class="light" src="img/index/linght.png"/>
+		<nav>
+			<ul>
+				<li class="deng1"><img src="img/index/deng1.png"/></li>
+				<li class="deng2"><img src="img/index/deng2.png"/></li>
+				<li class="deng3"><img src="img/index/deng3.png"/></li>
+				<li class="deng4"><img src="img/index/deng4.png"/></li>
+				<li class="deng5"><img src="img/index/deng5.png"/></li>
+			</ul>
+		</nav>
+		<div class="userContent">
+			<input id="userName" class="mdui-input" type="text" maxlength="60" placeholder="输入姓名"/>
+			<input id="sendName" class="mdui-input" type="text" maxlength="60" placeholder="输入姓名"/>
+		<div class="pic pic-js pic-no-js">
+			<img class="pic-btn" src="img/index/pic-btn.png"/>
+			<img class="pic-img img-top" src="img/index/pic-bgm.jpg"/>
+			<img class="pic-img img-cen" src="img/index/pic-bgm.jpg"/>
+			<img class="pic-img img-bot" src="img/index/pic-bgm.jpg"/>
+		</div>
+		<div class="audio">
+			<button class="audio-btn audio-js">点击说话</button>
+			<p>/</p>
+			<button class="audio-btn play-js">点击试听</button>
+		</div>
+		<div class="templet tem-js">
+			<img class="temp-btn" src="img/index/tem-btn.png"/>
+			<img class="diePic img-top" src="img/index/tem-bgm.jpg"/>
+			<img class="diePic img-cen" src="img/index/tem-bgm.jpg"/>
+			<img class="diePic img-bot" src="img/index/tem-bgm.jpg"/>
+		</div>
+		<div class="moleBox">
+			<ul class="moleList">
+				<li>
+					<img src="img/index/melo1.jpg"/>
+				</li>
+				<li>
+					<img src="img/index/melo2.jpg"/>
+				</li>
+				<li>
+					<img src="img/index/melo3.jpg"/>
+				</li>
+				<li>
+					<img src="img/index/melo4.jpg"/>
+				</li>
+			</ul>
+		</div>
+		<div class="zz"></div>
+		<button class="up-btn up-js">生成</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+	(function ($) {//获取url里的参数
+		$.getUrlParam = function (name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]); return null;
+			}
+	})(Zepto);
+	var audio = true;
+	var start = false;
+	var play = true;
+	var localId = '';
+	var localIds = '';
+	var picserverId = '';
+	var vidserverId = '';
+	var mbIndex = 0;
+	var openid = $.getUrlParam('id') || "0";
+	$(".tem-js").on('click',function(){
+		$(".moleBox").addClass("show");
+		$('.zz').show();
+	})
+	$('.zz').click(function(){
+		$('.zz').hide();
+		$(".moleBox").removeClass("show");
+	})
+	$(".moleList").on('click','li',function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		mbIndex = $(".moleList li").index(this);
+		$(".diePic").attr("src",$(".moleList li").eq(mbIndex).find('img').attr("src"));
+		$('.zz').hide();
+		$(".moleBox").removeClass("show");
+		console.log(mbIndex);
+	});
+	console.log(window.location.href);
+	$.ajax({
+		type:"POST",
+		async:false,
+		url : 'https://www.viooo-mobi.com/SpringFestival/JsSDKServlet.do',
+		data:{url:window.location.href},
+		success : function(data){
+			var obj = JSON.parse(data);
+			wx.config({    
+				debug: false,    
+				appId: obj.appid,    
+				timestamp: obj.timestamp,    
+				nonceStr: obj.nonceStr,    
+				signature: obj.signature,    
+				jsApiList: [    
+				'onMenuShareTimeline',    
+				'onMenuShareAppMessage' ,
+				'chooseImage',
+				'uploadImage',
+				'startRecord',
+				'stopRecord',
+				'onVoiceRecordEnd',
+				'playVoice',
+				'pauseVoice',
+				'uploadVoice'
+				]    
+			});
+			wx.ready(function(){
+				wx.onMenuShareTimeline({
+				    title: '这是一次与众不同的祝贺', // 分享标题
+				    link: 'https://www.viooo-mobi.com/SpringFestival/share/index.html', // 分享链接
+				    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/fir-center.png', // 分享图标
+				    success: function () { 
+				        // 用户确认分享后执行的回调函数
+				    },
+				    cancel: function () { 
+				        // 用户取消分享后执行的回调函数
+				    }
+				});
+				wx.onMenuShareAppMessage({
+				    title: '这是一次与众不同的祝贺', // 分享标题
+				    desc: '给家人制一斤的欢乐', // 分享描述
+				    link: 'https://www.viooo-mobi.com/SpringFestival/share/index.html', // 分享链接
+				    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/fir-center.png', // 分享图标
+				    type: '', // 分享类型,music、video或link，不填默认为link
+				    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+				    success: function () { 
+				        // 用户确认分享后执行的回调函数
+				    },
+				    cancel: function () { 
+				        // 用户取消分享后执行的回调函数
+				    }
+				});
+			});
+		},
+		error:function(err){
+			console.log(err);
+		}
+	})
+$('.pic-js').on('click',function(){
+	wx.chooseImage({
+		count: 1, // 默认9
+		sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+		sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+		success: function (res) {
+			localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+			wx.uploadImage({
+				localId: localIds.toString(), // 需要上传的图片的本地ID，由chooseImage接口获得
+				isShowProgressTips: 1, // 默认为1，显示进度提示
+				success: function (res) {
+					$('.pic-btn').remove();
+					$(".pic-img").attr('src',localIds);
+					picserverId = res.serverId; // 返回图片的服务器端ID
+				}
+			});
+		}
+	});
+})
+$('.audio-js').on('click',function(){
+	if(audio){
+		$(this).addClass('active').html("点击停止");
+		wx.startRecord();
+		audio = false;
+	}else{
+		$(this).removeClass('active').html("点击重录");
+		audio = true;
+		wx.stopRecord({
+			success: function (res) {
+				localId = res.localId;
+				start = true;
+				wx.uploadVoice({
+				    localId: localId, // 需要上传的音频的本地ID，由stopRecord接口获得
+				    isShowProgressTips: 1, // 默认为1，显示进度提示
+				        success: function (res) {
+				        vidserverId = res.serverId; // 返回音频的服务器端ID
+				    }
+				});
+			}
+		});
+	}
+})
+$(".play-js").on('click',function(){
+	if(play && start){
+		$(this).addClass('active').html("点击暂停");
+		wx.playVoice({
+		    localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
+		});
+
+		play = false;
+	}else{
+		$(this).removeClass('active').html("点击播放");
+		wx.pauseVoice({
+		    localId: localId // 需要暂停的音频的本地ID，由stopRecord接口获得
+		});
+		play = true;
+	}
+});
+$('.up-js').on('click',function(){
+	var up = {
+		openid : openid,
+		soundid : vidserverId,
+		sendname : $("#userName").val(),
+		recname: $("#sendName").val(),
+		temid : mbIndex,
+		picid : picserverId,
+		timestemp : new Date().getTime()
+	};
+	console.log(up.timestemp);
+	$.ajax({
+		type:"POST",
+		url:'https://www.viooo-mobi.com/SpringFestival/AddMessage.do',
+		data :up,
+		success : function(data){
+			console.log(data);
+			switch(mbIndex){
+				case 0 : window.location = "wechat-2017-newyears.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				case 1 : window.location = "wechat-2017-caishen.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				case 2 : window.location = "wechat-2017-bainian.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				default : window.location = "wechat-2017-yanhua.html?openid=" + openid +'&timestemp=' +up.timestemp;
+			}
+		},
+		error : function(res){
+			console.log(res);
+		}
+	})
+})
+</script>
+</html>

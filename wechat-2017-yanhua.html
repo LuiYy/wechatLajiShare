@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>阖家欢乐</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<style type="text/css">
+	html,body{width: 100%;height: 100%;font-size: 100px;}
+	.swiper-container {width: 100%;height: 100%;}
+	.swiper-slide{width: 100%;overflow: hidden;}
+	div img{display: block;width: 100%;}
+	.pos{position: absolute;}
+	/*第一页*/
+	.swiper-slide-1{background: #ececec;}
+	.fir-top-left{width: 50vw;top:-.1rem;left: 0;}
+	.fir-top-right{width: 40vw;top:-.1rem;right: 0;}
+	.fir-top{width: 100%;right: 0;top: 0;z-index: 1;}
+	.fir-center{width: 100%;top: 50%;}
+	.fir-center img{transform: translateY(-50%);}
+	.fir-family{width: 50vw;top: 55%;left: 50%;}
+	.fir-family img{transform: translate(-50%,-50%);}
+	.fir-bottom-left{width: 40vw;left: 2%;left: 0;bottom: 20%;}
+	.fir-bottom-center{width: 40vw;bottom: 10%;left: 50%;}
+	.fir-bottom-center img{transform: translateX(-50%);}
+	.fir-bottom-right{width: 40vw;right: 2%;bottom: 20%;}
+	.fir-bottom-right img{transform: rotateY(180deg);}
+	/*第二页*/
+	.swiper-slide-2,.swiper-slide-3{background:url(img/home/bgm2.jpg) no-repeat;background-size: cover;}
+	.sed-top-left{width: 30vw;top: 7%;left: 0;z-index: 1;}
+	.sed-center{width: 70vw;left: 50%;top: 10%;transform: translateX(-50%);}
+	.fir-cen-con,.userWord{box-sizing: border-box;display: flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;}
+	.fir-cen-con{overflow: hidden;transform:all;flex-direction:column;}
+	.sed-top{top: 5%;left: 50%}
+	.sed-top p{transform: translateX(-50%);font-weight: bold;}
+	.audioWord{width: 1.4rem;top: 42%;left: -30%;font-size: .14rem;color: white;background: rgba(0,0,0,.3);border-radius: .14rem;text-align: center;}
+	.userWord{width: 66vw;height: 64vh;padding: 0.2rem .1rem;font-size: .18rem;flex-direction:column;justify-content: space-around;background: url(img/home/user.jpg) top center no-repeat;background-size: 100% 100%;writing-mode:tb-rl;font-weight: bold;font-family: '书体坊赵九江钢笔楷书';}
+	.to{align-self:flex-start;color: #91470b;}
+	.from{text-align: right;align-self:flex-end;color: #91470b;}
+	/*第三页*/
+	.fir-top-right{z-index: 1;}
+	.userImg{width: 50vw;height: 50vw;object-fit: cover;}
+	/*第四页*/
+	.swiper-slide-4{background: url(img/3.jpg) no-repeat;background-size: cover;}
+	.fou-top-left{width: 45vw;z-index: 1;}
+	.fou-top{width: 50vw;}
+	.fou-title{top: 15%;left: 50%}
+	.fou-title img{transform: translateX(-50%);}
+	.fou-right{width: 20vw;top: 15%;right: 5%;}
+	.fourth-wxCode{width: 44vw;top: 25%;left: 50%;margin-left: -22vw;transform: translate(-50%, -50%);}
+    .fourth-word{bottom:35%;left: 50%;margin-left: -1.4rem;}
+    .fourth-word p{width: 2.8rem;height: .3rem;line-height: .3rem;border-radius: .3rem;color: white;font-size: .14rem;background: rgba(0,0,0,.8);text-align: center;}
+    .fourth-word .colorblue{color: #00d2ff;}
+    .fourth-bottom-word{width: 1rem;left: 50%;bottom: 25%;transform: translate( 0, -50%);margin-left: -.5rem;}
+    .fourth-bottom{bottom: 0;}
+    .audio-btn{position: absolute;top: 5vw;right: 5vw;width: .4rem;height: .4rem;z-index: 5;}
+    .audio-btn img{width: 100%;height: 100%;}
+    .auditBtn{
+    	animation-name:auditBtn;
+		animation-duration:1s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;
+    }
+    .upBtn{position: absolute;width: .4rem;bottom: .2rem;left: 50%;
+    	animation-name:upBtn;
+		animation-duration:1.5s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;}
+    .upBtn img{transform: translateX(-50%);}
+    /*自定义动画*/
+    .spread{
+    	-webkit-animation-name: spread;
+		animation-name: spread;
+		animation-duration:2s;
+    }
+    @keyframes spread{
+    	from{height:0;};
+		to{height: 64vh;};
+    }
+    @-webkit-keyframes auditBtn{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(360deg)}
+	}
+	@-moz-keyframes auditBtn{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(360deg)}
+	}
+	@-webkit-keyframes upBtn{
+	0%{-webkit-transform:translateY(0);opacity:.3;}
+	100%{-webkit-transform:translateY(-50%);opacity:1;}
+	}
+	@-moz-keyframes upBtn{
+	0%{-webkit-transform:translateY(0);opacity:.3;}
+	100%{-webkit-transform:translateY(-50%);opacity:1;}
+	}
+	@font-face { 
+	font-family: '书体坊赵九江钢笔楷书';
+	src: url('font/myfont.ttf');/*把下载的字体文件引入进来*/ }
+	</style>
+	<script type="text/javascript">
+	 document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';  
+	</script>
+</head>
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide swiper-slide-1">
+	        	<div class="ani pos fir-top-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/home/fir-top-left.png"/>
+	        	</div>
+	        	<div class="ani pos fir-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/home/fir-top-right.png"/>
+	        	</div>
+	        	<div class="ani pos fir-top">
+	        		<img src="img/home/snow.gif"/>
+	        	</div>
+	        	<div class="ani pos fir-center" swiper-animate-effect="pulse">
+	        		<img src="img/home/fir-center.png"/>
+	        	</div>
+	        	<div class="ani pos fir-family" swiper-animate-effect="pulse">
+	        		<img src="img/home/fir-family.png"/>
+	        	</div>
+	        	<div class="ani pos fir-bottom-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/caishen/fir-bottom.png"/>
+	        	</div>
+	        	<div class="ani pos fir-bottom-center" swiper-animate-effect="bounce">
+	        		<img src="img/home/fir-word.png"/>
+	        	</div>
+	        	<div class="ani pos fir-bottom-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/caishen/fir-bottom.png"/>
+	        	</div>
+	        	<div class="audio-btn audio-btn-js auditBtn">
+	        		<img src="img/audio.png"/>
+	        	</div>
+	        	<div class="ani upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide swiper-slide-2">
+	        	<div class="ani pos sed-top-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/home/sed-cloud.png"/>
+	        	</div>
+	        	<div class="ani pos fir-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/home/sed-light.png"/>
+	        	</div>
+	        	<div class="ani pos sed-top audio-js" swiper-animate-effect="rubberBand">
+	        		<p class="ani audioWord"><i class="iconfont">&#xe623;</i>您有一条语音消息~</p>
+	        	</div>
+	        	<div class="ani pos sed-center">
+	        		<div class="ani fir-cen-tit" swiper-animate-effect="fadeInDown">
+		        		<img src="img/home/con-title.png"/>
+		        	</div>
+		        	<div class="ani fir-cen-con" swiper-animate-effect="fadeInDown">
+		        		<div class="userWord css86a7de36417ee7" >
+		        			<p class="to to-js">亲爱的***</p>
+		        			<p> 
+							贺岁年，百忙闲；<br/>爆竹飞，游子归；<br/>乐传递，家欢聚。<br/>送您与众不同的祝贺，<br/>过与众不同的年。</p>
+							<p class="from from-js">您的好友：</p>
+		        		</div>
+		        		<img src="img/home/con-title.png"/>
+		        	</div>
+	        	</div>
+	        	<div class="ani upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide swiper-slide-3">
+	        	<div class="ani pos sed-top-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/home/sed-cloud.png"/>
+	        	</div>
+	        	<div class="ani pos fir-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/home/sed-light.png"/>
+	        	</div>
+	        	<div class="ani pos sed-center">
+	        		<div class="ani fir-cen-tit" swiper-animate-effect="fadeInDown">
+	        			<img src="img/home/con-title.png"/>
+	        		</div>
+	        		<div class="ani fir-cen-con" swiper-animate-effect="fadeInDown">
+	        			<div class="userWord">
+			        		<img class="userImg" src="img/caishen/null.jpg"/>
+			        	</div>
+			        	<img src="img/home/con-title.png"/>
+		        	</div>
+	        	</div>
+	        	<div class="ani upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide swiper-slide-4">
+	        	<div class="ani pos fou-top-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/home/fou-top-left.png"/>
+	        	</div>
+	        	<div class="ani pos fou-top" swiper-animate-effect="fadeInDown">
+	        		<img src="img/home/florwer.gif"/>
+	        	</div>
+	        	<div class="ani pos fou-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/home/fou-code.png"/>
+	        	</div>
+	        	<div class="ani pos fou-title" swiper-animate-effect="fadeInDown">
+	        		<img src="img/home/fou-word.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-wxCode" swiper-animate-effect="fadeInDown">
+	        		<img src="img/wxCode.jpg"/>
+	        	</div>
+	        	<div class="ani pos fourth-word" swiper-animate-effect="fadeInDown">
+	        		<p>关注上方微信公众号即可<span class="colorblue">免费创建</span>！</p>
+	        	</div>
+	        	<div class="ani pos fourth-bottom-word" swiper-animate-effect="fadeInDown">
+	        		<img src="img/4th-word.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-bottom" swiper-animate-effect="fadeInUp">
+	        		<img src="img/home/fou-bottom.png"/>
+	        	</div>
+	        	<audio id="backGround" src="audio/woaiwojia.mp3" loop="loop" autoplay="autoplay" preload></audio>
+	        </div>
+	    </div>
+	</div>
+</body>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script type="text/javascript">
+	(function ($) {//获取url里的参数
+		$.getUrlParam = function (name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]); return null;
+			}
+	})(Zepto);
+ //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
+document.getElementById('backGround').play();
+//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+document.addEventListener("WeixinJSBridgeReady", function () {
+    document.getElementById('backGround').play();
+    //document.getElementById('backGround').pause();
+}, false);
+var play = true;
+	$(document).ready(function(){
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'vertical',
+			preventClicks : false,
+			onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		    	swiperAnimateCache(swiper); //隐藏动画元素 
+		    	swiperAnimate(swiper); //初始化完成开始动画
+			}, 
+			onSlideChangeStart : function(){
+				$('.audio-btn').remove();
+			},
+			onSlideChangeEnd: function(swiper){ 
+		    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		    	var btnName = play?'auditBtn':'';
+		    	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
+		    	if(swiper.activeIndex == 1){
+		    		if(audLocalId == ""){
+					}else{
+						if(start){
+							wx.playVoice({
+							    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').pause();
+							start = false;
+						}else{
+							wx.pauseVoice({
+							    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').play();
+							start = true;
+						}
+					}
+					
+		    	}
+			} 
+		});
+	});
+
+	$('.swiper-slide').on('click','.audio-btn-js',function(){
+		if(play){
+			$(this).removeClass('auditBtn');
+			document.getElementById('backGround').pause();
+			play = false;
+		}
+		else{
+			$(this).addClass('auditBtn');
+			document.getElementById('backGround').play();
+			play = true;
+		}
+	});
+var address = "//www.viooo-mobi.com/SpringFestival/";
+var openid = $.getUrlParam('openid') || '0';
+var audLocalId = '';
+var timestemp = $.getUrlParam('timestemp') || '0';
+var start = false;
+	$.ajax({
+		type:"POST",
+		async:false,
+		url : address+'JsSDKServlet.do',
+		data:{url:window.location.href},
+		success : function(data){
+			var configObj = JSON.parse(data);
+			$.ajax({
+				type:"POST",
+				async:false,
+				url : '//www.viooo-mobi.com/SpringFestival/GetMessage.do',
+				data:{openid:openid,temid:3,timestemp : timestemp},
+				success : function(data){
+					var obj = JSON.parse(data);
+					console.log(obj);
+					var recname = obj.recname || "你亲爱的朋友";
+					var sendname = obj.sendname || "亲爱的";
+					$(".to-js").html("TO:"+sendname);
+					$('.from-js').html("FROM:"+recname);
+					wx.config({    
+						debug: false,    
+						appId: configObj.appid,    
+						timestamp: configObj.timestamp,    
+						nonceStr: configObj.nonceStr,    
+						signature: configObj.signature,    
+						jsApiList: [    
+						'onMenuShareTimeline',    
+						'onMenuShareAppMessage',
+						'downloadImage',
+						'downloadVoice',
+						'playVoice',
+						'pauseVoice',
+						'onVoicePlayEnd'
+						]    
+					});
+					wx.error(function(res){
+						alert(res);
+					});
+					wx.ready(function(){
+						wx.onMenuShareTimeline({
+						    title: '阖城共享平安世，家苑同乘富贵舟', // 分享标题
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf6.jpg', // 分享图标
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.onMenuShareAppMessage({
+						    title: '阖城共享平安世，家苑同乘富贵舟', // 分享标题
+						    desc: '贺岁年，百忙闲；爆竹飞，游子归；乐传递，家欢聚。送您与众不同的祝贺，过与众不同的年。', // 分享描述
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf6.jpg', // 分享图标
+						    type: '', // 分享类型,music、video或link，不填默认为link
+						    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.downloadImage({
+							serverId: obj.picid, // 需要下载的图片的服务器端ID，由uploadImage接口获得
+							isShowProgressTips: 1, // 默认为1，显示进度提示
+							success: function (res) {
+							    var localId = res.localId; // 返回图片下载后的本地ID
+							    $(".userImg").attr('src',localId);
+							}
+						});
+						wx.downloadVoice({
+						    serverId : obj.soundid, // 需要下载的音频的服务器端ID，由uploadVoice接口获得
+						    isShowProgressTips: 1, // 默认为1，显示进度提示
+						    success: function (res) {
+						        audLocalId = res.localId; // 返回音频的本地ID
+						        start = true;
+						    }
+						});
+						wx.onVoicePlayEnd({
+						    success: function (res) {
+						        var localId = res.localId; // 返回音频的本地ID
+						        document.getElementById('backGround').play();
+						    }
+						});
+					});
+				}
+			});
+		},
+		error:function(err){
+			console.log(err);
+		}
+	});
+$(".audio-js").on('click',function(){
+	if(audLocalId == ""){
+		alert('没有录音消息~');
+	}
+	if(start){
+		wx.playVoice({
+		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').pause();
+		start = false;
+	}else{
+		wx.pauseVoice({
+		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').play();
+		start = true;
+	}
+});
+
+
+</script>
+</html>
