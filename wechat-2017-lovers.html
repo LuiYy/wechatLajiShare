@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>以爱之名</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<style type="text/css">
+	html,body{width: 100%;height: 100%;font-size: 100px;}
+	.swiper-container {width: 100%;height: 100%;}
+	.swiper-slide{width: 100%;overflow: hidden;}
+	div img{display: block;width: 100%;}
+	.pos{position: absolute;}
+	/*第一页*/
+    .swiper-slide-1{background:radial-gradient(30% 25%, farthest-corner,#ffdfdf,#eba4a2);background: -webkit-radial-gradient(30% 25%, farthest-corner,#ffdfdf,#eba4a2);}
+    .fir-top{width: 96%;left: 50%;top:-4%;}
+    .fir-top img{transform:translateX(-50%);-webkit-transform:translateX(-50%);}
+    .fir-center{width: 100%;top: 45%;}
+    .fir-centerBar{width: 100%;height: 50%;position: relative;}
+    .fir-center-left{width: 38%;/*top: 40%;*/left: 10%;bottom: 0;}
+    .fir-center-right{width: 38%;/*top: 40%;*/right: 10%;bottom: 0;}
+    .fir-bottom{width: 100%;bottom: 0;left: 0;}
+    /*第二页*/
+	.swiper-slide-2{background:radial-gradient(35% 25%, farthest-corner,#fffefe,#e8bbb8);background: -webkit-radial-gradient(35% 25%, farthest-corner,#fffefe,#e8bbb8);}
+	.sed-top-right{width: 30%;top: 0;right: 0;}
+	.sed-top-right img{transform:translateY(-39%);-webkit-transform:translateY(-39%);}
+	.sed-center-heart{top: 50%;left: 10%;width: 20%;}
+	.sed-center-heart img{transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+	.sed-bar-top{top: 5%;}
+	.sed-bar-fir{width: 80%;}
+	.user-picture, .userWord {position: absolute;width: 2.6rem;height: 1.6rem;z-index: -1;border: .1rem solid white;box-shadow: 0 0 24px rgba(172,22,35,.75);}
+	.userWord{top: 90%;left: 50%;transform: rotate(5deg) translateX(-50%);-webkit-transform: rotate(5deg) translateX(-50%);/*box-sizing: border-box;*/padding: 0 .05rem;font-size: .18rem;display: flex;flex-direction:column;justify-content: space-around;background: #e5e5e5;font-family: '书体坊赵九江钢笔楷书';}
+	/*图片*/
+	.sed-center-img{width: 100%;top: 48%;}
+	.sed-bar-last{width: 80%;top: 0;right: 0;}
+	.user-picture{transform: rotate(-5deg) translateX(-50%);-webkit-transform: rotate(-5deg) translateX(-50%);top: .4rem;left: 50%;object-fit: cover;}
+	.sed-bottom-left{width: 30%;left: 0;bottom: 0;}
+	.sed-bottom-right{right: 10%;bottom: 5%;}
+	.sed-bottom-heart{width: 15%;bottom: 13%;right: 5%;}
+	/*第三页*/
+	.swiper-slide-3{background:url(img/lovers/bgi.jpg) no-repeat;background-size: 100% 100%;}
+	.third-top-left{width: 45%;}
+	.third-top-right{width: 45%;right: 0;}
+	.third-title{width: 70%;top: 5%;left: 50%;}
+	.third-title img{transform: translateX(-50%);-webkit-transform: translateX(-50%);}
+	.third-center-right{width: 20%;top: 25%;right: 0;}
+	.third-center-left{width: 20%;top: 30%;}
+	.third-wxCode{width: 44vw;top: 30%;left: 50%;margin-left: -22vw;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
+	.third-word{bottom:35%;left: 50%;margin-left: -1.4rem;}
+    .third-word p{width: 2.8rem;height: .3rem;line-height: .3rem;border-radius: .3rem;color: white;font-size: .14rem;background: rgba(0,0,0,.8);text-align: center;}
+    .third-word .colorblue{color: #00d2ff;}
+    .third-bottom-word{width: 3rem;left: 50%;bottom: 10%;color: white;text-align: center;margin-left: -1.5rem}
+    .third-bottom-word h3{font-size: .3rem;}
+    .third-bottom-word p{font-size: .14rem;}
+    .audio-btn{position: absolute;top: 5vw;right: 5vw;width: .4rem;height: .4rem;z-index: 5;}
+    .audio-btn img{width: 100%;height: 100%;}
+    .auditBtn{
+    	animation-name:auditBtn;
+		animation-duration:1s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;
+    }
+    .upBtn{width: .4rem;bottom: .2rem;left: 50%;
+    	animation-name:upBtn;
+		animation-duration:1.5s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;}
+    .upBtn img{transform: translateX(-50%);}
+    /*自定动画*/
+    @-webkit-keyframes circle{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(-360deg)}
+	}
+	@-moz-keyframes circle{
+	20%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(-360deg)}
+	}
+	@-webkit-keyframes breathe {
+		0% {opacity: 0.4;}
+		100% {opacity: 1;}
+	}
+	@keyframes breathe {
+		0% {opacity: 0.4;}
+		100% {opacity: 1;}
+	}
+	@-webkit-keyframes auditBtn{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(360deg)}
+	}
+	@-moz-keyframes auditBtn{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(360deg)}
+	}
+	@-webkit-keyframes upBtn{
+	0%{-webkit-transform:translateY(0);opacity:.3;}
+	100%{-webkit-transform:translateY(-50%);opacity:1;}
+	}
+	@-moz-keyframes upBtn{
+	0%{-webkit-transform:translateY(0);opacity:.3;}
+	100%{-webkit-transform:translateY(-50%);opacity:1;}
+	}
+	@font-face { 
+	font-family: '书体坊赵九江钢笔楷书';
+	src: url('font/myfont.ttf');/*把下载的字体文件引入进来*/ }
+	</style>
+	<script type="text/javascript">
+	 document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';  
+	</script>
+</head>
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide swiper-slide-1">
+	        	<div class="ani pos fir-top" swiper-animate-effect="fadeInUp">
+	        		<img src="img/lovers/fir-top.png"/>
+	        	</div>
+	        	<div class="ani pos fir-center" swiper-animate-effect="rotateIn">
+	        		<img src="img/lovers/fir-center.png"/>
+	        	</div>
+	        	<div class="fir-centerBar">
+	        		<div class="ani pos fir-center-left" swiper-animate-effect="fadeInLeft">
+		        		<img src="img/lovers/fir-cen-left.png">
+		        	</div>
+		        	<div class="ani pos fir-center-right" swiper-animate-effect="fadeInRight">
+		        		<img src="img/lovers/fir-cen-right.png">
+		        	</div>
+	        	</div>
+	        	<div class="ani pos fir-bottom" swiper-animate-effect="fadeInUp">
+		        	<img src="img/lovers/fir-bottom.png">
+		        </div>
+	        </div>
+	        <div class="swiper-slide swiper-slide-2">
+	        	<div class="ani pos sed-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/lovers/sed-top-right.png"/>
+	        	</div>
+	        	<div class="ani pos sed-bar-top" swiper-animate-effect="fadeInLeft">
+	        		<img class="sed-bar-fir" src="img/lovers/sed-bar-top.png"/>
+	        		<div class="userWord">
+	        			<p class="to to-js">亲爱的***</p>
+	        			<p>金鸡鸣，鸡年到，协亲傍友度良宵；<br/>金财济，财神到，辞旧迎新贺新朝</p>
+						<p class="from from-js">您的好友：</p>
+	        		</div>
+	        	</div>
+	        	<div class="ani pos sed-center-heart" swiper-animate-effect="fadeInUp">
+		        	<img src="img/lovers/sed-center.png">
+		        </div>
+	        	<div class="ani pos sed-center-img" swiper-animate-effect="fadeInRight">
+	        		<img class="pos sed-bar-last" src="img/lovers/sed-bar-center.png"/>
+	        		<img class="user-picture userImg" src="img/caishen/caishen.jpg">
+	        	</div>
+	        	<div class="ani pos sed-bottom-left" swiper-animate-effect="fadeInLeft">
+		        	<img src="img/lovers/sed-bottom-left.png"/>
+		        </div>
+		        <div class="ani pos sed-bottom-right" swiper-animate-effect="fadeInLeft">
+		        	<img src="img/lovers/sed-bottom-right.png"/>
+		        </div>
+		        <div class="ani pos sed-bottom-heart" swiper-animate-effect="fadeInUp">
+		        	<img src="img/lovers/sed-bottom-heart.png">
+		        </div>
+	        </div>
+	        <div class="swiper-slide swiper-slide-3">
+	        	<div class="ani pos third-top-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/lovers/third-top-left.png"/>
+	        	</div>
+	        	<div class="ani pos third-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/lovers/third-top-right.png"/>
+	        	</div>
+	        	<div class="ani pos third-title" swiper-animate-effect="fadeIn">
+	        		<img src="img/lovers/third-title.png"/>
+	        	</div>
+	        	<div class="ani pos third-center-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/lovers/third-center-right.png"/>
+	        	</div>
+	        	<div class="ani pos third-center-left" swiper-animate-effect="fadeInLeft">
+	        		<img src="img/lovers/third-center-left.png"/>
+	        	</div>
+	        	<div class="ani pos third-wxCode" swiper-animate-effect="fadeInDown">
+	        		<img src="img/wxCode.jpg"/>
+	        	</div>
+	        	<div class="ani pos third-word" swiper-animate-effect="fadeInDown">
+	        		<p>关注上方微信公众号即可<span class="colorblue">免费创建</span>！</p>
+	        	</div>
+	        	<div class="ani pos third-bottom-word" swiper-animate-effect="fadeInDown">
+	        		<h3>精品贺卡</h3>
+	        		<p>【自由编辑】</p>
+	        	</div>
+	        	<audio id="backGround" src="audio/newbgm.mp3" loop="loop" autoplay="autoplay" preload></audio>
+	        </div>
+	    </div>
+	</div>
+</body>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'vertical',
+			preventClicks : false,
+			onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		    	swiperAnimateCache(swiper); //隐藏动画元素 
+		    	swiperAnimate(swiper); //初始化完成开始动画
+			}, 
+			onSlideChangeStart : function(){
+				//$('.audio-btn').remove();
+			},
+			onSlideChangeEnd: function(swiper){ 
+		    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		   //  	var btnName = play ? 'auditBtn':'';
+		   //  	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
+		   //  	if(swiper.activeIndex == 1){
+		   //  		if(audLocalId == ""){
+					// }else{
+					// 	if(start){
+					// 		wx.playVoice({
+					// 		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+					// 		});
+					// 		document.getElementById('backGround').pause();
+					// 		start = false;
+					// 	}else{
+					// 		wx.pauseVoice({
+					// 		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+					// 		});
+					// 		document.getElementById('backGround').play();
+					// 		start = true;
+					// 	}
+					// }
+					
+		   //  	}
+			} 
+		});
+	});
+</script>
+</html>
