@@ -15,7 +15,7 @@
 	div img{display: block;width: 100%;}
 	.pos{position: absolute;}
 	/*第一页*/
-    .swiper-slide-1{background: url(img/lanternfestival/bgi1.jpg) no-repeat;background-size: cover;}
+    .swiper-slide-1,.swiper-slide-2,.swiper-slide-3,.swiper-slide-4{background: url(img/lanternfestival/bgi1.jpg) no-repeat;background-size: cover;}
     .fir-top-left{width: 25%;}
     .fir-top-left img{transform:translateY(-48%);-webkit-transform:translateY(-48%);}
     .fir-top-right{width: 40%;top: 0;right: 0;}
@@ -29,43 +29,58 @@
     .fir-title,.fir-subhead{width: 40%;left: 50%;}
     .fir-title{top: 60%;}
     .fir-subhead{top: 75%;}
-    .fir-title img,.fir-subhead img,.fir-bottom img{transform:translateX(-50%);-webkit-transform:translateX(-50%);}
+    .fir-title-box,.fir-subhead img,.fir-bottom img{transform:translateX(-50%);-webkit-transform:translateX(-50%);}
     .fir-bottom{width: 50%;bottom: 0;left: 50%;}
     .fir-star1{width: 15vw;top: 20%;left: -21vw;}
     .fir-star2{width: 10vw;top: 60%;left: 23vw;}
     .fir-star3{width: 15vw;top: 37%;left: 37vw;}
     /*第二页*/
-	.swiper-slide-2{background:radial-gradient(35% 25%, farthest-corner,#fffefe,#e8bbb8);background: -webkit-radial-gradient(35% 25%, farthest-corner,#fffefe,#e8bbb8);}
+    .sed-fireworks1{width: 21%;top: 17%;left: 35%;}
+    .sed-fireworks2{width: 30%;top: 23%;right: 24%;}
+    .sed-fireworks3{width: 30%;top:13%;right: 14%;}
+    .sed-fireworks4{width: 37%;top:10%;left: 5%;}
+    .sed-fireworks5{width: 33%;right: 30%;}
+    .sed-top-left{width: 25%;}
 	.sed-top-right{width: 30%;top: 0;right: 0;}
-	.sed-top-right img{transform:translateY(-39%);-webkit-transform:translateY(-39%);}
-	.sed-center-heart{top: 50%;left: 10%;width: 20%;}
-	.sed-center-heart img{transform:translateY(-50%);-webkit-transform:translateY(-50%);}
-	.sed-bar-top{top: 5%;}
-	.sed-bar-fir{width: 80%;}
-	.user-picture, .userWord {position: absolute;width: 2.6rem;height: 1.6rem;z-index: -1;border: .1rem solid white;box-shadow: 0 0 24px rgba(172,22,35,.75);}
-	.userWord{top: 90%;left: 50%;transform: rotate(5deg) translateX(-50%);-webkit-transform: rotate(5deg) translateX(-50%);/*box-sizing: border-box;*/padding: 0 .05rem;font-size: .18rem;display: flex;flex-direction:column;justify-content: space-around;background: #e5e5e5;font-family: '书体坊赵九江钢笔楷书';}
-	/*图片*/
-	.sed-center-img{width: 100%;top: 48%;}
-	.sed-bar-last{width: 80%;top: 0;right: 0;}
-	.user-picture{transform: rotate(-5deg) translateX(-50%);-webkit-transform: rotate(-5deg) translateX(-50%);top: .4rem;left: 50%;object-fit: cover;}
-	.sed-bottom-left{width: 30%;left: 0;bottom: 0;}
-	.sed-bottom-right{right: 10%;bottom: 5%;}
-	.sed-bottom-heart{width: 15%;bottom: 13%;right: 5%;}
+	.sed-center{width: 70%;top: 50%;left: 50%;margin: -20vh -35vw;}
+	.userWord{width: 100%;height: 100%;top:0;font-size: .16rem;box-sizing: border-box;
+		display: flex;flex-direction:column;
+		justify-content: center;
+		-webkit-box-align: center; -moz-box-align: center;-ms-flex-align: center;
+		-webkit-align-items: center;align-items: center;align-content:flex-start;}
+	.to,.from{flex-basis:inherit;}
+	.sed-center-span{width: 13%;right: 10%;bottom: 10%;}
+	.sed-bottom{bottom: 0;}
+	.sed-bottom-right{width: 40vw;top: -116%;right: 4%;z-index: -1;}
+	.sed-bottom-left{width: 25vw;top: -113%;left: 20%;z-index: -1;}
 	/*第三页*/
-	.swiper-slide-3{background:url(img/lovers/bgi.jpg) no-repeat;background-size: 100% 100%;}
-	.third-top-left{width: 45%;}
-	.third-top-right{width: 45%;right: 0;}
-	.third-title{width: 70%;top: 5%;left: 50%;}
-	.third-title img{transform: translateX(-50%);-webkit-transform: translateX(-50%);}
-	.third-center-right{width: 20%;top: 25%;right: 0;}
-	.third-center-left{width: 20%;top: 30%;}
-	.third-wxCode{width: 44vw;top: 30%;left: 50%;margin-left: -22vw;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
-	.third-word{bottom:35%;left: 50%;margin-left: -1.4rem;}
+	.third-top-befor{width: 100%;}
+	.third-top-after{width: 80%;left: 50%;margin-left: -40vw;}
+	.third-top-left{width: 27%;}
+	.third-top-right{width: 40%;right: 0;}
+	.third-wxCode{width: 44vw;top: 20%;left: 50%;}
+	.third-wxCode img,.third-word p,.upBtn img{transform: translateX(-50%);-webkit-transform: translateX(-50%);}
+	.third-word{bottom:45%;left: 50%;}
     .third-word p{width: 2.8rem;height: .3rem;line-height: .3rem;border-radius: .3rem;color: white;font-size: .14rem;background: rgba(0,0,0,.8);text-align: center;}
     .third-word .colorblue{color: #00d2ff;}
-    .third-bottom-word{width: 3rem;left: 50%;bottom: 10%;color: white;text-align: center;margin-left: -1.5rem}
+    .third-bottom-word{width: 3rem;left: 50%;bottom: 35%;color: white;text-align: center;margin-left: -1.5rem}
     .third-bottom-word h3{font-size: .3rem;}
     .third-bottom-word p{font-size: .14rem;}
+    .third-bottom-before{width: 100%;bottom: 0;}
+    .third-bottom-after{width: 100%;bottom: 0;}
+    /*第四页*/
+    .fourth-fireworks1{width: 25%;top:60%;left: 10%;}
+    .fourth-fireworks2{width: 30%;top:67%;left: 22%;}
+    .fourth-fireworks3{width: 35%;top:55%;left: 34%;}
+    .fourth-fireworks4{width: 39%;top:53%;left: -22%;}
+    .fourth-fireworks5{width: 27%;top:50%;left: 25%;}
+    .fourth-fireworks6{width: 44%;top:58%;right: 1%;}
+    .fourth-fireworks7{width: 35%;top: 55%;right: -20%;}
+    .fourth-center{width: 80%;left: 50%;margin-left: -40vw;}
+    .fourth-center-bgi{transform: translateY(-25%);-webkit-transform: translateY(-25%);}
+    .user-picture{width: 1.85rem;height:1.45rem;object-fit: cover;box-sizing: border-box;top: .25rem;left: 50%;margin-left: -.92rem;border: .06rem solid white;}
+    .fourth-audio{width: 40vw;top: 35%;left: 50%;margin-left: -20vw;}
+    .fourth-word{font-size: .16rem;font-family: '书体坊赵九江钢笔楷书';color: #e4bd2c;top:45%;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);}
     .audio-btn{position: absolute;top: 5vw;right: 5vw;width: .4rem;height: .4rem;z-index: 5;}
     .audio-btn img{width: 100%;height: 100%;}
     .auditBtn{
@@ -79,7 +94,6 @@
 		animation-duration:1.5s;
 		animation-timing-function:linear;
 		animation-iteration-count:infinite;}
-    .upBtn img{transform: translateX(-50%);}
     /*自定动画*/
     @-webkit-keyframes circle{
 	0%{-webkit-transform:rotate(0deg)}
@@ -152,11 +166,11 @@
 	        	<div class="ani pos fir-fireworks3" swiper-animate-effect="zoomIn">
 	        		<img src="img/lanternfestival/fireworks3.png"/>
 	        	</div>
-	        	<div class="ani pos fir-title" swiper-animate-effect="fadeInRight">
-	        		<img src="img/lanternfestival/fir-title.png"/>
-	        	</div>
-	        	<div class="ani pos fir-subhead" swiper-animate-effect="fadeInLeft">
-	        		<img src="img/lanternfestival/fir-subhead.png"/>
+	        	<div class="ani pos fir-title">
+	        		<div class="fir-title-box">
+	        			<img class="ani" swiper-animate-effect="fadeInRight" src="img/lanternfestival/fir-title.png"/>
+	        		<img class="ani" swiper-animate-effect="fadeInLeft" src="img/lanternfestival/fir-subhead.png"/>
+	        		</div>
 	        	</div>
 	        	<div class="ani pos fir-bottom" swiper-animate-effect="fadeInUp" swiper-animate-delay=".6s">
 	        		<img class="fir-bottom-bgi" src="img/lanternfestival/fir-bottom.png"/>
@@ -170,61 +184,137 @@
 	        			<img src="img/lanternfestival/star3.png"/>
 	        		</div>
 	        	</div>
+	        	<div class="audio-btn audio-btn-js auditBtn">
+	        		<img src="img/audio.png"/>
+	        	</div>
+	        	<div class="pos upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
 	        </div>
 	        <div class="swiper-slide swiper-slide-2">
+	        	<div class="ani pos sed-fireworks1" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/fireworks1.png"/>
+	        	</div>
+	        	<div class="ani pos sed-fireworks2" swiper-animate-effect="zoomIn" swiper-animate-delay=".5s">
+	        		<img src="img/lanternfestival/fireworks2.png"/>
+	        	</div>
+	        	<div class="ani pos sed-fireworks3" swiper-animate-effect="zoomIn" swiper-animate-delay=".4s">
+	        		<img src="img/lanternfestival/fireworks6.png"/>
+	        	</div>
+	        	<div class="ani pos sed-fireworks4" swiper-animate-effect="zoomIn" swiper-animate-delay=".7s">
+	        		<img src="img/lanternfestival/fireworks4.png"/>
+	        	</div>
+	        	<div class="ani pos sed-fireworks5" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/fireworks5.png"/>
+	        	</div>
+	        	<div class="ani pos sed-top-left" swiper-animate-effect="fadeInLeft" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/sed-top-left.png"/>
+	        	</div>
 	        	<div class="ani pos sed-top-right" swiper-animate-effect="fadeInRight">
-	        		<img src="img/lovers/sed-top-right.png"/>
+	        		<img src="img/lanternfestival/sed-top-right.png"/>
 	        	</div>
-	        	<div class="ani pos sed-bar-top" swiper-animate-effect="fadeInLeft">
-	        		<img class="sed-bar-fir" src="img/lovers/sed-bar-top.png"/>
-	        		<div class="userWord">
-	        			<p class="to to-js">亲爱的***</p>
-	        			<p>金鸡鸣，鸡年到，协亲傍友度良宵；<br/>金财济，财神到，辞旧迎新贺新朝</p>
-						<p class="from from-js">您的好友：</p>
+	        	<div class="ani pos sed-center" swiper-animate-effect="zoomIn">
+	        		<img src="img/lanternfestival/sed-center.png"/>
+	        		<div class="pos userWord">
+	        			<p class="to to-js">To：小姐姐</p>
+	        			<p> 年年元宵年年圆；<br/>年年花灯年年转；<br/>家圆人圆幸福圆，<br/>财转情转幸福转。<br/>恭贺元宵节快乐！ </p>
+						<p class="from from-js">From：小哥哥 </p>
 	        		</div>
+	        		<div class="ani pos sed-center-span" swiper-animate-effect="fadeInRight" swiper-animate-delay=".5s">
+		        		<img src="img/lanternfestival/sed-span.png"/>
+		        	</div>
 	        	</div>
-	        	<div class="ani pos sed-center-heart" swiper-animate-effect="fadeInUp">
-		        	<img src="img/lovers/sed-center.png">
-		        </div>
-	        	<div class="ani pos sed-center-img" swiper-animate-effect="fadeInRight">
-	        		<img class="pos sed-bar-last" src="img/lovers/sed-bar-center.png"/>
-	        		<img class="user-picture userImg" src="img/caishen/caishen.jpg">
+	        	<div class="ani pos sed-bottom" swiper-animate-effect="fadeInUp">
+	        		<img src="img/lanternfestival/sed-bottom.png"/>
+	        		<div class="ani pos sed-bottom-left" swiper-animate-effect="bounceInUp" swiper-animate-delay=".6s">
+		        		<img src="img/lanternfestival/sed-bottom-left.png"/>
+		        	</div>
+	        		<div class="ani pos sed-bottom-right" swiper-animate-effect="bounceInUp" swiper-animate-delay="1s">
+		        		<img src="img/lanternfestival/sed-bottom-right.png"/>
+		        	</div>
 	        	</div>
-	        	<div class="ani pos sed-bottom-left" swiper-animate-effect="fadeInLeft">
-		        	<img src="img/lovers/sed-bottom-left.png"/>
+	        	<div class="pos upBtn">
+		        	<img src="img/up.png"/>
 		        </div>
-		        <div class="ani pos sed-bottom-right" swiper-animate-effect="fadeInLeft">
-		        	<img src="img/lovers/sed-bottom-right.png"/>
-		        </div>
-		        <div class="ani pos sed-bottom-heart" swiper-animate-effect="fadeInUp">
-		        	<img src="img/lovers/sed-bottom-heart.png">
+	        </div>
+	        <div class="swiper-slide swiper-slide-4">
+	        	<div class="ani pos sed-top-left" swiper-animate-effect="fadeInLeft" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/sed-top-left.png"/>
+	        	</div>
+	        	<div class="ani pos sed-top-right" swiper-animate-effect="fadeInRight">
+	        		<img src="img/lanternfestival/sed-top-right.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks1" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/fireworks1.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks2" swiper-animate-effect="zoomIn" swiper-animate-delay=".5s">
+	        		<img src="img/lanternfestival/fireworks2.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks3" swiper-animate-effect="zoomIn" swiper-animate-delay=".4s">
+	        		<img src="img/lanternfestival/fireworks6.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks4" swiper-animate-effect="zoomIn" swiper-animate-delay=".7s">
+	        		<img src="img/lanternfestival/fireworks4.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks5" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/fireworks5.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks6" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/fireworks7.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-fireworks7" swiper-animate-effect="zoomIn" swiper-animate-delay=".5s">
+	        		<img src="img/lanternfestival/fireworks3.png"/>
+	        	</div>
+	        	<div class="ani pos fourth-center" swiper-animate-effect="fadeInDown" swiper-animate-delay=".5s">
+	        		<img class="fourth-center-bgi" src="img/lanternfestival/fourth-center.png"/>
+	        		<img class="pos user-picture userImg" src="img/lanternfestival/default.jpg"/>
+	        		<div class="ani pos fourth-audio audio-js" swiper-animate-effect="rubberBand">
+		        		<img src="img/lanternfestival/audio.png"/>
+		        	</div>
+		        	<p class="pos fourth-word">点击收听祝福语音 </p>
+	        	</div>
+	        	<div class="ani pos sed-bottom" swiper-animate-effect="fadeInUp">
+	        		<img src="img/lanternfestival/sed-bottom.png"/>
+	        		<div class="ani pos sed-bottom-left" swiper-animate-effect="bounceInUp" swiper-animate-delay=".6s">
+		        		<img src="img/lanternfestival/sed-bottom-left.png"/>
+		        	</div>
+	        		<div class="ani pos sed-bottom-right" swiper-animate-effect="bounceInUp" swiper-animate-delay="1s">
+		        		<img src="img/lanternfestival/sed-bottom-right.png"/>
+		        	</div>
+	        	</div>
+	        	<div class="pos upBtn">
+		        	<img src="img/up.png"/>
 		        </div>
 	        </div>
 	        <div class="swiper-slide swiper-slide-3">
-	        	<div class="ani pos third-top-left" swiper-animate-effect="fadeInLeft">
-	        		<img src="img/lovers/third-top-left.png"/>
+	        	<div class="ani pos third-top-befor" swiper-animate-effect="zoomIn" swiper-animate-delay=".3s">
+	        		<img src="img/lanternfestival/third-top-before2.png"/>
 	        	</div>
-	        	<div class="ani pos third-top-right" swiper-animate-effect="fadeInRight">
-	        		<img src="img/lovers/third-top-right.png"/>
+	        	<div class="ani pos third-top-after" swiper-animate-effect="zoomIn" swiper-animate-delay=".1s">
+	        		<img src="img/lanternfestival/third-top-before.png"/>
 	        	</div>
-	        	<div class="ani pos third-title" swiper-animate-effect="fadeIn">
-	        		<img src="img/lovers/third-title.png"/>
+	        	<div class="ani pos third-top-left" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.2s">
+	        		<img src="img/lanternfestival/third-top-left.png"/>
 	        	</div>
-	        	<div class="ani pos third-center-right" swiper-animate-effect="fadeInRight">
-	        		<img src="img/lovers/third-center-right.png"/>
+	        	<div class="ani pos third-top-right" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.2s">
+	        		<img src="img/lanternfestival/third-top-right.png"/>
 	        	</div>
-	        	<div class="ani pos third-center-left" swiper-animate-effect="fadeInLeft">
-	        		<img src="img/lovers/third-center-left.png"/>
-	        	</div>
+	        	
 	        	<div class="ani pos third-wxCode" swiper-animate-effect="fadeInDown">
 	        		<img src="img/wxCode.jpg"/>
 	        	</div>
-	        	<div class="ani pos third-word" swiper-animate-effect="fadeInDown">
+	        	<div class="ani pos third-word" swiper-animate-effect="fadeInDown" swiper-animate-delay=".6s">
 	        		<p>关注上方微信公众号即可<span class="colorblue">免费创建</span>！</p>
 	        	</div>
-	        	<div class="ani pos third-bottom-word" swiper-animate-effect="fadeInDown">
+	        	<div class="ani pos third-bottom-word" swiper-animate-effect="fadeInDown" swiper-animate-delay=".8s">
 	        		<h3>精品贺卡</h3>
 	        		<p>【自由编辑】</p>
+	        	</div>
+	        	<div class="ani pos third-bottom-before" swiper-animate-effect="fadeInUp" swiper-animate-delay=".5s">
+	        		<img src="img/lanternfestival/third-bottom-after.png"/>
+	        	</div>
+	        	<div class="ani pos third-bottom-after" swiper-animate-effect="fadeInDown">
+	        		<img src="img/lanternfestival/third-bottom-before.png"/>
 	        	</div>
 	        	<audio id="backGround" src="audio/newbgm.mp3" loop="loop" autoplay="autoplay" preload></audio>
 	        </div>
@@ -236,6 +326,23 @@
 <script src="js/swiper-3.4.1.jquery.min.js"></script>
 <script src="js/swiper.animate1.0.2.min.js"></script>
 <script type="text/javascript">
+	(function ($) {//获取url里的参数
+		$.getUrlParam = function (name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]); return null;
+			}
+	})(Zepto);
+	"use strict";
+ //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
+document.getElementById('backGround').play();
+//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+document.addEventListener("WeixinJSBridgeReady", function () {
+    document.getElementById('backGround').play();
+    //document.getElementById('backGround').pause();
+}, false);
+var play = true;
+var userAudio = false;
 	$(document).ready(function(){
 		var mySwiper = new Swiper ('.swiper-container', {
 			direction: 'vertical',
@@ -245,105 +352,166 @@
 		    	swiperAnimate(swiper); //初始化完成开始动画
 			}, 
 			onSlideChangeStart : function(){
-				//$('.audio-btn').remove();
+				$('.audio-btn').remove();
 			},
 			onSlideChangeEnd: function(swiper){ 
 		    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-		   //  	var btnName = play ? 'auditBtn':'';
-		   //  	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
-		   //  	if(swiper.activeIndex == 1){
-		   //  		if(audLocalId == ""){
-					// }else{
-					// 	if(start){
-					// 		wx.playVoice({
-					// 		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
-					// 		});
-					// 		document.getElementById('backGround').pause();
-					// 		start = false;
-					// 	}else{
-					// 		wx.pauseVoice({
-					// 		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
-					// 		});
-					// 		document.getElementById('backGround').play();
-					// 		start = true;
-					// 	}
-					// }
+		    	var btnName = play?'auditBtn':'';
+		    	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
+		    	if(swiper.activeIndex == 2){
+		    		if(audLocalId == ""){
+					}else{
+						if(userAudio){
+							wx.playVoice({
+							    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').pause();
+							userAudio = false;
+						}else{
+							wx.pauseVoice({
+							    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').play();
+							userAudio = true;
+						}
+					}
 					
-		   //  	}
+		    	}
 			} 
 		});
 	});
-var star = function (cxt) //定义星的对象  
-{  
-    this.x = -1;  
-    this.y = -1;  //表示横纵坐标  
-    this.style = "";  
-    this.r = -1;  
-    this.scale = 1; //表示缩放倍数  
-    this.angle = 0; //旋转的角度  
-    this.angle1 = 0; //辅助参数  
-    this.getPos = function () //获取随机坐标  
-    {  
-        var xx = 20 + 1200 * Math.random();  
-        var yy = 20 + 250 * Math.random();  
-        this.x = Math.ceil(xx); this.y = Math.ceil(yy); //获取了随机坐标  
-    }  
-    this.getAngle = function () //得到随机的角度  
-    {  
-        this.angle = Math.random() * Math.PI;  
-    }  
-    this.getR = function () //获取半径  
-    {  
-        var i = 1 + 4 * Math.random();  
-        this.r = Math.ceil(i); //获取随机半径  
-    }  
-    this.getColor = function () //获取随机颜色  
-    {  
-        var n = Math.random();  
-        if (n < 0.5)  
-            this.style = "white";  
-        else  
-            this.style = "#BBAAB1"; //灰白色  
-  
-    }  
-    this.drawPartStar = function () //部分  
-    {  
-        cxt.save();  
-        cxt.beginPath();  
-        cxt.lineCap = "round"; cxt.lineWidth = 5;  
-        cxt.fillStyle = this.style;  
-        cxt.translate(this.x, this.y); //位移  
-        cxt.rotate(this.angle1);  
-        //cxt.globalAlpha = this.alpha; //设置透明度  
-        cxt.moveTo(0, 0);  
-        var xx = 0 - this.r * Math.sin(36 / 180 * 3.14);  
-        var yy = 0 - this.r * Math.cos(36 / 180 * 3.14);  
-        cxt.lineTo(xx, yy);  
-        xx = 0;  
-        yy = 0 - this.r * Math.cos(36 / 180 * 3.14) - this.r * Math.sin(36 / 180 * 3.14) * Math.tan(72 / 180 * 3.14);  
-        cxt.lineTo(xx, yy);  
-        xx = this.r * Math.sin(36 / 180 * 3.14);  
-        yy = 0 - this.r * Math.cos(36 / 180 * 3.14);  
-        cxt.lineTo(xx, yy);  
-        cxt.lineTo(0, 0);  
-        cxt.closePath();  
-        cxt.fill();  
-        cxt.restore();  
-    }  
-    this.drawStar = function () //绘制完整的花  
-    {  
-        for (var i = 0; i <= 4; i++) {  
-            this.angle1 = i * 72 / 180 * 3.14 + this.angle;  
-            this.drawPartStar();  
-        }  
-    }  
-    this.init = function ()  //初始化函数  
-    {  
-        this.getPos();  
-        this.getR();  
-        this.getColor();  
-        this.getAngle();  
-    }  
-}
+
+	$('.swiper-slide').on('click','.audio-btn-js',function(){
+		if(play){
+			$(this).removeClass('auditBtn');
+			document.getElementById('backGround').pause();
+			play = false;
+		}
+		else{
+			$(this).addClass('auditBtn');
+			document.getElementById('backGround').play();
+			play = true;
+		}
+	});
+var address = "//www.viooo-mobi.com/SpringFestival/";
+var openid = $.getUrlParam('openid') || '0';
+var audLocalId = '';
+var timestemp = $.getUrlParam('timestemp') || '0';
+	$.ajax({
+		type:"POST",
+		async:false,
+		url : address+'JsSDKServlet.do',
+		data:{url:window.location.href},
+		success : function(data){
+			var configObj = JSON.parse(data);
+			$.ajax({
+				type:"POST",
+				async:false,
+				url : '//www.viooo-mobi.com/SpringFestival/GetMessage.do',
+				data:{openid:openid,temid:5,timestemp : timestemp},
+				success : function(data){
+					var obj = JSON.parse(data);
+					console.log(obj);
+					var recname = obj.recname || "你亲爱的朋友";
+					var sendname = obj.sendname || "亲爱的";
+					$(".to-js").html("TO:"+sendname);
+					$('.from-js').html("FROM:"+recname);
+					wx.config({    
+						debug: false,    
+						appId: configObj.appid,    
+						timestamp: configObj.timestamp,    
+						nonceStr: configObj.nonceStr,    
+						signature: configObj.signature,    
+						jsApiList: [    
+						'onMenuShareTimeline',    
+						'onMenuShareAppMessage',
+						'downloadImage',
+						'downloadVoice',
+						'playVoice',
+						'pauseVoice',
+						'onVoicePlayEnd'
+						]    
+					});
+					wx.error(function(res){
+						alert(res);
+					});
+					wx.ready(function(){
+						wx.onMenuShareTimeline({
+						    title: '你要的五福在这里', // 分享标题
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf1.jpg', // 分享图标
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.onMenuShareAppMessage({
+						    title: '鸡年到，财神到！', // 分享标题
+						    desc: '金鸡鸣，鸡年到，协亲傍友度良宵；金财济，财神到，辞旧迎新贺新朝，魑魅魍魉邪厄扫，吉祥如意富贵绕', // 分享描述
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf3.jpg', // 分享图标
+						    type: '', // 分享类型,music、video或link，不填默认为link
+						    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.downloadImage({
+							serverId: obj.picid, // 需要下载的图片的服务器端ID，由uploadImage接口获得
+							isShowProgressTips: 1, // 默认为1，显示进度提示
+							success: function (res) {
+							    var localId = res.localId; // 返回图片下载后的本地ID
+							    $(".userImg").attr('src',localId);
+							}
+						});
+						wx.downloadVoice({
+						    serverId : obj.soundid, // 需要下载的音频的服务器端ID，由uploadVoice接口获得
+						    isShowProgressTips: 1, // 默认为1，显示进度提示
+						    success: function (res) {
+						        audLocalId = res.localId; // 返回音频的本地ID
+						        userAudio = true;
+						    }
+						});
+						wx.onVoicePlayEnd({
+						    success: function (res) {
+						        var localId = res.localId; // 返回音频的本地ID
+						        document.getElementById('backGround').play();
+						    }
+						});
+					});
+				}
+			});
+		},
+		error:function(err){
+			console.log(err);
+		}
+	});
+$(".audio-js").on('click',function(){
+	if(audLocalId == ""){
+		alert('没有录音消息~');
+	}
+	if(userAudio){
+		wx.playVoice({
+		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').pause();
+		userAudio = false;
+	}else{
+		wx.pauseVoice({
+		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').play();
+		userAudio = true;
+	}
+});
 </script>
 </html>

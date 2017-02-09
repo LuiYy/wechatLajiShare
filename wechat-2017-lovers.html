@@ -32,7 +32,7 @@
 	.sed-bar-top{top: 5%;}
 	.sed-bar-fir{width: 80%;}
 	.user-picture, .userWord {position: absolute;width: 2.6rem;height: 1.6rem;z-index: -1;border: .1rem solid white;box-shadow: 0 0 24px rgba(172,22,35,.75);}
-	.userWord{top: 90%;left: 50%;transform: rotate(5deg) translateX(-50%);-webkit-transform: rotate(5deg) translateX(-50%);/*box-sizing: border-box;*/padding: 0 .05rem;font-size: .18rem;display: flex;flex-direction:column;justify-content: space-around;background: #e5e5e5;font-family: '书体坊赵九江钢笔楷书';}
+	.userWord{top: 90%;left: 50%;transform: rotate(5deg) translateX(-50%);-webkit-transform: rotate(5deg) translateX(-50%);/*box-sizing: border-box;*/padding: 0 .05rem;font-size: .16rem;display: flex;flex-direction:column;justify-content: space-around;background: #e5e5e5;font-family: '书体坊赵九江钢笔楷书';}
 	/*图片*/
 	.sed-center-img{width: 100%;top: 48%;}
 	.sed-bar-last{width: 80%;top: 0;right: 0;}
@@ -131,6 +131,9 @@
 	        	<div class="ani pos fir-bottom" swiper-animate-effect="fadeInUp">
 		        	<img src="img/lovers/fir-bottom.png">
 		        </div>
+		        <div class="pos upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
 	        </div>
 	        <div class="swiper-slide swiper-slide-2">
 	        	<div class="ani pos sed-top-right" swiper-animate-effect="fadeInRight">
@@ -139,9 +142,9 @@
 	        	<div class="ani pos sed-bar-top" swiper-animate-effect="fadeInLeft">
 	        		<img class="sed-bar-fir" src="img/lovers/sed-bar-top.png"/>
 	        		<div class="userWord">
-	        			<p class="to to-js">亲爱的***</p>
-	        			<p>金鸡鸣，鸡年到，协亲傍友度良宵；<br/>金财济，财神到，辞旧迎新贺新朝</p>
-						<p class="from from-js">您的好友：</p>
+	        			<p class="to to-js">TO:亲爱的小2</p>
+	        			<p>因为你的出现，我的世界才圆满 如果我的身边没有你 世界如何才能美丽 亲爱的，情人节快乐！</p>
+						<p class="from from-js">From:你的小1</p>
 	        		</div>
 	        	</div>
 	        	<div class="ani pos sed-center-heart" swiper-animate-effect="fadeInUp">
@@ -160,6 +163,9 @@
 		        <div class="ani pos sed-bottom-heart" swiper-animate-effect="fadeInUp">
 		        	<img src="img/lovers/sed-bottom-heart.png">
 		        </div>
+		        <div class="pos upBtn">
+	        		<img src="img/up.png"/>
+	        	</div>
 	        </div>
 	        <div class="swiper-slide swiper-slide-3">
 	        	<div class="ani pos third-top-left" swiper-animate-effect="fadeInLeft">
@@ -197,6 +203,23 @@
 <script src="js/swiper-3.4.1.jquery.min.js"></script>
 <script src="js/swiper.animate1.0.2.min.js"></script>
 <script type="text/javascript">
+	(function ($) {//获取url里的参数
+		$.getUrlParam = function (name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]); return null;
+			}
+	})(Zepto);
+	"use strict";
+ //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
+document.getElementById('backGround').play();
+//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+document.addEventListener("WeixinJSBridgeReady", function () {
+    document.getElementById('backGround').play();
+    //document.getElementById('backGround').pause();
+}, false);
+var play = true;
+var userAudio = false;
 	$(document).ready(function(){
 		var mySwiper = new Swiper ('.swiper-container', {
 			direction: 'vertical',
@@ -206,33 +229,166 @@
 		    	swiperAnimate(swiper); //初始化完成开始动画
 			}, 
 			onSlideChangeStart : function(){
-				//$('.audio-btn').remove();
+				$('.audio-btn').remove();
 			},
 			onSlideChangeEnd: function(swiper){ 
 		    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-		   //  	var btnName = play ? 'auditBtn':'';
-		   //  	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
-		   //  	if(swiper.activeIndex == 1){
-		   //  		if(audLocalId == ""){
-					// }else{
-					// 	if(start){
-					// 		wx.playVoice({
-					// 		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
-					// 		});
-					// 		document.getElementById('backGround').pause();
-					// 		start = false;
-					// 	}else{
-					// 		wx.pauseVoice({
-					// 		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
-					// 		});
-					// 		document.getElementById('backGround').play();
-					// 		start = true;
-					// 	}
-					// }
+		    	var btnName = play?'auditBtn':'';
+		    	$(".swiper-slide-"+(swiper.activeIndex+1)).append('<div class="audio-btn audio-btn-js '+btnName+'"><img src="img/audio.png"/></div>');
+		    	if(swiper.activeIndex == 1){
+		    		if(audLocalId == ""){
+					}else{
+						if(userAudio){
+							wx.playVoice({
+							    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').pause();
+							userAudio = false;
+						}else{
+							wx.pauseVoice({
+							    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+							});
+							document.getElementById('backGround').play();
+							userAudio = true;
+						}
+					}
 					
-		   //  	}
+		    	}
 			} 
 		});
 	});
+
+	$('.swiper-slide').on('click','.audio-btn-js',function(){
+		if(play){
+			$(this).removeClass('auditBtn');
+			document.getElementById('backGround').pause();
+			play = false;
+		}
+		else{
+			$(this).addClass('auditBtn');
+			document.getElementById('backGround').play();
+			play = true;
+		}
+	});
+var address = "//www.viooo-mobi.com/SpringFestival/";
+var openid = $.getUrlParam('openid') || '0';
+var audLocalId = '';
+var timestemp = $.getUrlParam('timestemp') || '0';
+	$.ajax({
+		type:"POST",
+		async:false,
+		url : address+'JsSDKServlet.do',
+		data:{url:window.location.href},
+		success : function(data){
+			var configObj = JSON.parse(data);
+			$.ajax({
+				type:"POST",
+				async:false,
+				url : '//www.viooo-mobi.com/SpringFestival/GetMessage.do',
+				data:{openid:openid,temid:4,timestemp : timestemp},
+				success : function(data){
+					var obj = JSON.parse(data);
+					console.log(obj);
+					var recname = obj.recname || "你亲爱的朋友";
+					var sendname = obj.sendname || "亲爱的";
+					$(".to-js").html("TO:"+sendname);
+					$('.from-js').html("FROM:"+recname);
+					wx.config({    
+						debug: false,    
+						appId: configObj.appid,    
+						timestamp: configObj.timestamp,    
+						nonceStr: configObj.nonceStr,    
+						signature: configObj.signature,    
+						jsApiList: [    
+						'onMenuShareTimeline',    
+						'onMenuShareAppMessage',
+						'downloadImage',
+						'downloadVoice',
+						'playVoice',
+						'pauseVoice',
+						'onVoicePlayEnd'
+						]    
+					});
+					wx.error(function(res){
+						alert(res);
+					});
+					wx.ready(function(){
+						wx.onMenuShareTimeline({
+						    title: '你要的五福在这里', // 分享标题
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf1.jpg', // 分享图标
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.onMenuShareAppMessage({
+						    title: '鸡年到，财神到！', // 分享标题
+						    desc: '金鸡鸣，鸡年到，协亲傍友度良宵；金财济，财神到，辞旧迎新贺新朝，魑魅魍魉邪厄扫，吉祥如意富贵绕', // 分享描述
+						    link: window.location.href, // 分享链接
+						    imgUrl: 'https://www.viooo-mobi.com/SpringFestival/share/img/sf3.jpg', // 分享图标
+						    type: '', // 分享类型,music、video或link，不填默认为link
+						    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+						    success: function () { 
+						        // 用户确认分享后执行的回调函数
+						        alert("分享成功~");
+						    },
+						    cancel: function () { 
+						        // 用户取消分享后执行的回调函数
+						        alert("分享失败了呢~");
+						    }
+						});
+						wx.downloadImage({
+							serverId: obj.picid, // 需要下载的图片的服务器端ID，由uploadImage接口获得
+							isShowProgressTips: 1, // 默认为1，显示进度提示
+							success: function (res) {
+							    var localId = res.localId; // 返回图片下载后的本地ID
+							    $(".userImg").attr('src',localId);
+							}
+						});
+						wx.downloadVoice({
+						    serverId : obj.soundid, // 需要下载的音频的服务器端ID，由uploadVoice接口获得
+						    isShowProgressTips: 1, // 默认为1，显示进度提示
+						    success: function (res) {
+						        audLocalId = res.localId; // 返回音频的本地ID
+						        userAudio = true;
+						    }
+						});
+						wx.onVoicePlayEnd({
+						    success: function (res) {
+						        var localId = res.localId; // 返回音频的本地ID
+						        document.getElementById('backGround').play();
+						    }
+						});
+					});
+				}
+			});
+		},
+		error:function(err){
+			console.log(err);
+		}
+	});
+$(".audio-js").on('click',function(){
+	if(audLocalId == ""){
+		alert('没有录音消息~');
+	}
+	if(userAudio){
+		wx.playVoice({
+		    localId: audLocalId // 需要播放的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').pause();
+		userAudio = false;
+	}else{
+		wx.pauseVoice({
+		    localId: audLocalId // 需要暂停的音频的本地ID，由stopRecord接口获得
+		});
+		document.getElementById('backGround').play();
+		userAudio = true;
+	}
+});
 </script>
 </html>

@@ -37,7 +37,7 @@
 		transition:all .5s;}
 	.zz{position: fixed;display: none;top: 0;right: 0;bottom: 0;left: 0;background: rgba(0,0,0,0);z-index: 2;}
 	.moleBox.show{bottom: 0;}
-	.moleList{width: 5rem;height: 100%;-webkit-align-items: center;align-items: center;justify-content: space-around;}
+	.moleList{width: 7rem;height: 100%;-webkit-align-items: center;align-items: center;justify-content: space-around;}
 	.moleList li{width: 1rem;}
 	.moleList li img{width: 100%;object-fit: cover;}
 	</style>
@@ -80,16 +80,22 @@
 		</div>
 		<div class="moleBox">
 			<ul class="moleList">
-				<li>
+				<li class="mole6" mole="5">
+					<img src="img/index/melo6.jpg"/>
+				</li>
+				<li class="mole5" mole="4">
+					<img src="img/index/melo5.jpg"/>
+				</li>
+				<li class="mole1" mole="0">
 					<img src="img/index/melo1.jpg"/>
 				</li>
-				<li>
+				<li class="mole2" mole="1">
 					<img src="img/index/melo2.jpg"/>
 				</li>
-				<li>
+				<li class="mole3" mole="2">
 					<img src="img/index/melo3.jpg"/>
 				</li>
-				<li>
+				<li class="mole4" mole="3">
 					<img src="img/index/melo4.jpg"/>
 				</li>
 			</ul>
@@ -129,10 +135,11 @@
 	$(".moleList").on('click','li',function(){
 		$(this).addClass('active').siblings().removeClass('active');
 		mbIndex = $(".moleList li").index(this);
+		mole=$(this).attr("mole");
 		$(".diePic").attr("src",$(".moleList li").eq(mbIndex).find('img').attr("src"));
 		$('.zz').hide();
 		$(".moleBox").removeClass("show");
-		console.log(mbIndex);
+		console.log(mbIndex,mole);
 	});
 	console.log(window.location.href);
 	$.ajax({
@@ -257,7 +264,7 @@ $('.up-js').on('click',function(){
 		soundid : vidserverId,
 		sendname : $("#userName").val(),
 		recname: $("#sendName").val(),
-		temid : mbIndex,
+		temid : mole,
 		picid : picserverId,
 		timestemp : new Date().getTime()
 	};
@@ -268,11 +275,13 @@ $('.up-js').on('click',function(){
 		data :up,
 		success : function(data){
 			console.log(data);
-			switch(mbIndex){
-				case 0 : window.location = "wechat-2017-newyears.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
-				case 1 : window.location = "wechat-2017-caishen.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
-				case 2 : window.location = "wechat-2017-bainian.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
-				default : window.location = "wechat-2017-yanhua.html?openid=" + openid +'&timestemp=' +up.timestemp;
+			switch(up.temid){
+				case 0 : window.location = "wechat-2017-lovers.html?openid=" + openid +'&timestemp=' +up.timestemp; break;
+				case 1 : window.location = "wechat-2017-newyears.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				case 2 : window.location = "wechat-2017-caishen.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				case 3 : window.location = "wechat-2017-bainian.html?openid=" + openid +'&timestemp=' +up.timestemp;break;
+				case 4 : window.location = "wechat-2017-yanhua.html?openid=" + openid +'&timestemp=' +up.timestemp;break; 
+				default : window.location = "wechat-2017-lanternfestival.html?openid=" + openid +'&timestemp=' +up.timestemp;
 			}
 		},
 		error : function(res){
